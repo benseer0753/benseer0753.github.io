@@ -1,5 +1,5 @@
 * {
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 }
 
 body {
@@ -7,7 +7,31 @@ body {
 	background-color: Beige;
 }
 
+.mainText {
+	line-height: 1.3;
+	margin-left: 250px;
+	padding-left: 10px;
+	max-width: 800px;
+	border-left: 2px outset grey;
+}
+
+h1, h2, h3, h4 {
+	font-family: Oxanium, Sans-serif;
+}
+
+h2 {
+	border-bottom: 1px solid grey;
+}
+
 code {
-	font-family: monospaced;
-	background-color: Black;
+	font-family: monospace;
+	padding: 1px 2px;
+	border-radius: 2px;
+	border: 1px solid black;
+}
+
+.notice {
+	border-left: 5px solid goldenrod;
+	padding-left: 5px;
+	background: rgba(255, 193, 37, 0.2);
 }

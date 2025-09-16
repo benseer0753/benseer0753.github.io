@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 	<title>Windows - User Management</title>
 	<link href="style.css" rel="stylesheet" type="text/css" media="all">
 </head>
-<body style="max-width:800px; margin:auto;">
+<body>
 
 <div class="mainText">
 
 <h1>User Management</h1>
 <p class="subtitle">For Windows and Windows Server</p>
+
 <h2>Control Panel</h2>
 
 <p> Using Control panel to manage users is one of the simplest ways to manage users, and is what I recommend for beginners. The UI [GLOS] provided makes it simple to tell, at a glance, the type and password status of users.
@@ -24,7 +28,7 @@ The second is to either right-click on the start icon or hit WIN-x to open the P
 The third is to open the Run dialogue with WIN-r, typing in "Control Panel", and hitting enter.
 
 <h4>2. Navigating to the User Management Menu</h4>
-<p> From the main Control Panel menu, when sorted into the default categories (see fig. n): Click on the "User Accounts" option, then again on "User Accounts" on the next screen. From there, click on "Manage another account".</p>
+<p> From the main Control Panel menu, when sorted into the default categories (see fig. n): Click on the "User&nbspAccounts" option, then again on "User&nbspAccounts" on the next screen. From there, click on "Manage another account".</p>
 <p> When the main Control Panel menu is sorted into icons (see fig. n+1): Click on "User Accounts" once (the icons are alphabetical, so it'll be near the bottom), then click on "Manage another account".
 </p>
 
@@ -42,21 +46,29 @@ The third is to open the Run dialogue with WIN-r, typing in "Control Panel", and
 <p> double click on group to manage users</p>
 
 <h2> Powershell </h2>
+<p><i><u>Help with commands</u></i></p>
 <p> A quick, direct way to manage users is through the <code>net</code> command. This gives you a text-based way to manage users, usergroups, and many other aspects of your system.</p>
-<p> To manage a user through <code>net</code>, type <code>net user username</code>, followed by the action you want to perform and any arguments it takes.</p>
+<p> To manage a user through <code>net</code>, type <code>net&nbspuser&nbspusername</code>, followed by the action you want to perform and any arguments it takes.</p>
 
 <h3> Adding / Removing Users </h3>
 
-<p><i>Note: All powershell commands are by default case-insensitive [GLOSS]. This includes usernames and domains, but <b>not</b> passwords. Keep that in mind when managing accounts.</i></p>
-<p> to add a user with net is simple. Run the command <code>net user username /ADD</code>. A password can also be specified at account creation with <code>net user username password /ADD</code>.
-If, instead of a password, a '*' is typed, then a password prompt will be displayed so the password can be typed without revealing it to any onlookers. I recommend typing it directly during competition so that you can verify its spelling.</p>
-<p> Removing users uses the same syntax, just replacing <code>/ADD</code> with <code>/DELETE</code> and without the password parameter.</p>
+<p class="notice"><i>Note: All powershell commands are by default case-insensitive [GLOSS]. This includes usernames and domains, but <b>not</b> passwords. Keep that in mind when managing accounts.</i></p>
+
+<p> Creating users with <code>net</code> is done using the following command:</p>
+<p><code><b>net</b>&nbsp<i>user&nbspusername&nbsppassword</i>&nbsp/ADD</code></p>
+<p> Replace the username value with the name of the user you want to add, and the password value with the password to assign to them. 
+You can also assign passwords to existing users by using their username and removing the <code>/ADD</code> at the end. </p>
+<p>If, instead of a password, a '*' is typed, then a password prompt will be displayed so the password can be typed without revealing it to any onlookers. I recommend typing it directly during competition so that you can verify its spelling.</p>
+
+<p> Removing users is done very similarly, using the following command:</p>
+<p><code><b>net</b>&nbsp<i>user&nbspusername</i>&nbsp/DELETE</code></p>
+<p> Be warned that this action is <i>irreversible</i> and you should make absolutely certain that you want to delete the user.</p>
 
 <h3> Managing User Type </h3>
 
 <p><i>For more details on managing localgroups, see here</i></p>
-<p> Managing user types through <code>net</code> is done through the <code>net localgroup</code> command. This is because "Administrators" are simply a group of users with all of their permissions turned on. To add a user to Administrators, type <code>net localgroup Administrators /add username</code>.
-To remove a user, type <code>net localgroup Administrators /delete username</code>. To see a list of current Administrators, type <code>net localgroup Administrators</code>.</p>
+<p> Managing user types through <code>net</code> is done through the <code>net&nbsplocalgroup</code> command. This is because "Administrators" are simply a group of users with all of their permissions turned on. To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/add&nbspusername</code>.
+To remove a user, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/delete&nbspusername</code>. To see a list of current Administrators, type <code>net&nbsplocalgroup&nbspAdministrators</code>.</p>
 
 <h2> See Also </h2>
 <ul>

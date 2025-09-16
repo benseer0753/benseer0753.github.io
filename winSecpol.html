@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Windows - Local Security Policy</title>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<div class="mainText">
+
+<h1>Local Security Policy</h1>
+<p class="subtitle">For Windows and Windows Server</p>
+
+<p> Managing the local security policies on a system is very important. They control things ranging from password requirements to niche, technical security options.
+Improperly configured security policies pose a risk to the security of the system that can easily be remedied.</p>
+
+<h2>Account Policies</h2>
+<p> The policies in the Account Policies branch of secpol relate to password requirements and locking accounts after failed sign-ins.</p>
+<h3>Password Policies</h3>
+<p> Included here are the policies defining password requirements. In order, these are:
+
+<ul>
+<li>Enforce Password History</li>
+<p><b>Recommended: 5</b><br>This is the number of previous passwords to save, in order to prevent users from rotating between a small number of passwords when asked to change them.</p>
+
+<li>Maximum Password Age</li>
+<p><b>Recommended: 90</b><br>This number, in days, is how long a user can keep the same password before being forced to change it.
+These prevents old, potentially compromised passwords from remaining on the system.</p>
+
+<li>Minimum Password Age</li>
+<p><b>Recommended: 30</b><br>This number, in days, is how long after changing a password before a user can change it again.</p>
+
+<li>Minimum Password Length</li>
+<p><b>Recommended: 14</b><br>This is the minimum number of characters that a valid password can be. 14, for historical reasons, is the maximum on windows machines. It's also a good length for us.</p>
+
+<li>Password Must Meet Complexity Requirements</li>
+<p><b>Recommended: Enabled</b><br>Without this enabled, none of the other password requirements take effect. They're not much use to us unless they're turned on, so make sure to enable this.</p>
+
+<li>Store Passwords Using Reversible Encryption</li>
+<p><b>Recommended: Disabled</b><br>Windows already stores the passwords encrypted by default. This makes that encryption reversible, meaning that passwords can be learned just by finding them and unencrypting them.
+Usually, they're stored using unreversible encryption, so enabling this is a security risk.</p>
+</ul>
+
+<h3>Account Lockout Policy</h3>
+<p>These three policies dictate what should happen after consecutive failed login attempts:</p>
+
+<ul>
+<li>Account Lockout Duration</li>
+<p><b>Recommended: 30</b><br>This number, in minutes, is how long the account should be locked out once enough failed logins occur.</p>
+
+<li>Account Lockout Threshold</li>
+<p><b>Recommended: 5</b><br>This is how many failed attempts are needed to trigger the aaccount lockout. It shouldn't be too low, otherwise a series of honest typos could trigger it.
+It also shouldn't be too high, or it'll give malicious actors more attempts to crack the password. 5 is a good middle-ground.</p>
+
+<li>Reset Account Lockout Counter After</li>
+<p><b>Recommended: 30</b><br>This is how many minutes it takes for the failed login attempt counter to reset.</p>
+</ul>
+<h2>Local Policies</h2>
+<p>The Local Policies branch is much more varied, containing the Audit Policy, User Rights Assignment, and Security Options nodes.</p>
+<h3>Audit Policy</h3>
+<p>The Audit Policy is by far the simplest of the three. All you need to do is go into every option and check success and failure.</p>
+<p>These options decide whether the computer keeps a log of administrative and other actions performed on it. How on earth you read them is beyond me, though.</p>
+
+</div>
+</body>
+</html>
