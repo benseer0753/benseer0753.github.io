@@ -1,0 +1,16 @@
+Layout					-o--- plan
+Adjustable Width		o---- idea
+Dark Mode				o---- idea
+
+ == WINDOWS ==
+User Management			--o-- incomplete
+Uninstallation			--o-- incomplete
+Firewall				o---- idea
+Powershell				-o--- plan
+Password Policies		o---- idea
+
+ ==  LINUX  ==
+User Management			-o--- plan
+Uninstallation			o---- idea
+Firewall				o---- idea
+Password Policies		-o--- plan
