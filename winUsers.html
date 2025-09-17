@@ -55,18 +55,20 @@ The third is to open the Run dialogue with WIN-r, typing in "Control Panel", and
 <p class="notice"><i>Note: All powershell commands are by default case-insensitive [GLOSS]. This includes usernames and domains, but <b>not</b> passwords. Keep that in mind when managing accounts.</i></p>
 
 <p> Creating users with <code>net</code> is done using the following command:</p>
-<p><code><b>net</b>&nbsp<i>user&nbspusername&nbsppassword</i>&nbsp/ADD</code></p>
+<p><code><b>net</b>&nbspuser&nbsp<i>username&nbsppassword</i>&nbsp/ADD</code></p>
 <p> Replace the username value with the name of the user you want to add, and the password value with the password to assign to them. 
 You can also assign passwords to existing users by using their username and removing the <code>/ADD</code> at the end. </p>
 <p>If, instead of a password, a '*' is typed, then a password prompt will be displayed so the password can be typed without revealing it to any onlookers. I recommend typing it directly during competition so that you can verify its spelling.</p>
 
 <p> Removing users is done very similarly, using the following command:</p>
-<p><code><b>net</b>&nbsp<i>user&nbspusername</i>&nbsp/DELETE</code></p>
+<p><code><b>net</b>&nbspuser&nbsp<i>username</i>&nbsp/DELETE</code></p>
 <p> Be warned that this action is <i>irreversible</i> and you should make absolutely certain that you want to delete the user.</p>
 
 <h3> Managing User Type </h3>
 
 <p><i>For more details on managing localgroups, see here</i></p>
+<p> Managing user types through <code>net</code> is done using net's localgroup option. This is because "Administrators" is a group of users with all of their permissions set.</p>
+<p><code><b>net</b>&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbsp<i>username</i></code></p>
 <p> Managing user types through <code>net</code> is done through the <code>net&nbsplocalgroup</code> command. This is because "Administrators" are simply a group of users with all of their permissions turned on. To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/add&nbspusername</code>.
 To remove a user, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/delete&nbspusername</code>. To see a list of current Administrators, type <code>net&nbsplocalgroup&nbspAdministrators</code>.</p>
 
