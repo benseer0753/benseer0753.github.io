@@ -33,17 +33,18 @@ The third is to open the Run dialogue with WIN-r, typing in "Control Panel", and
 </p>
 
 <h4>3. The Actual Management</h4>
-<p> From here, click on the name or icon of the user you want to manage, then click on [REPHRASE: the option you want to do]. From there, follow the on-screen instructions.
-<p> [INCLUDE: Maybe more details about the options?]</p>
+<p> From here, click on the name or icon of the user you want to manage, then click on the action you want to perform. From there, follow the on-screen instructions.
 
 <h2> Computer Management </h2>
 <p> Using Computer Management (compmgmt.msc) is my preferred way to manage users. It provides a GUI [GLOSS] where you can conveniently manage many parts of your computer.</p>
 
 <h3> Adding / Removing Users</h3>
-<p> go to Local Users and Groups</p>
-<p> Double cick on user, go to "Member Of" to manage group membership</p>
-<p> right clikc on name for delete and set password</p>
-<p> double click on group to manage users</p>
+<p>When you open Computer Management, click on Local Users and Groups on the left side. The button to add users will be on the right side. 
+Click it and provide the required information to make a new user.</p>
+<p>To delete a user, right click on them and select delete.</p>
+
+<p>To change an account's type between standard and administrator, double-click on them and select the "Member Of" tab. Then, [do the thing]. 
+You can also go to the groups section and double click on a group to manage its members.</p>
 
 <h2> Powershell </h2>
 <p><i><u>Help with commands</u></i></p>
@@ -68,9 +69,11 @@ You can also assign passwords to existing users by using their username and remo
 
 <p><i>For more details on managing localgroups, see here</i></p>
 <p> Managing user types through <code>net</code> is done using net's localgroup option. This is because "Administrators" is a group of users with all of their permissions set.</p>
+<p>To make a user into an Administrator, use the following command:</p>
 <p><code><b>net</b>&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbsp<i>username</i></code></p>
-<p> Managing user types through <code>net</code> is done through the <code>net&nbsplocalgroup</code> command. This is because "Administrators" are simply a group of users with all of their permissions turned on. To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/add&nbspusername</code>.
-To remove a user, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/delete&nbspusername</code>. To see a list of current Administrators, type <code>net&nbsplocalgroup&nbspAdministrators</code>.</p>
+<p>To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/add&nbspusername</code>.
+<p>To remove a user, replace the <code>/ADD</code> with a <code>/DELETE</code>.</p>
+
 
 <h2> See Also </h2>
 <ul>
