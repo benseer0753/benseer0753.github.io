@@ -6,11 +6,15 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 	<title>Windows - User Management</title>
 	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="themes.js"></script>
+	
+	
 </head>
 <body>
 
-<div class="mainText">
-
+<div id="mainText">
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
 <h1>User Management</h1>
 <p class="subtitle">For Windows and Windows Server</p>
 
@@ -71,7 +75,7 @@ You can also assign passwords to existing users by using their username and remo
 <p> Managing user types through <code>net</code> is done using net's localgroup option. This is because "Administrators" is a group of users with all of their permissions set.</p>
 <p>To make a user into an Administrator, use the following command:</p>
 <p><code><b>net</b>&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbsp<i>username</i></code></p>
-<p>To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/add&nbspusername</code>.
+<p>To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbspusername</code>.
 <p>To remove a user, replace the <code>/ADD</code> with a <code>/DELETE</code>.</p>
 
 
@@ -84,5 +88,6 @@ You can also assign passwords to existing users by using their username and remo
 </ul>
 
 </div>
+<script>checkTheme();</script>
 </body>
 </html>

@@ -9,7 +9,9 @@
 </head>
 <body>
 
-<div class="mainText">
+<div id="mainText">
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
 <h1> User Management </h1>
 <p class="subtitle">For Ubuntu and Linux</p>
 <h2>Ubuntu Settings</h2>
@@ -55,5 +57,6 @@ You can easily change insecure passwords by letting Ubuntu create a randomly gen
 <h3>Removing a User</h3>
 <p>To remove a user from the system, use the <code>userdel</code> utility. Syntax: <code>sudo userdel username</code>. Example: <code>sudo userdel john</code> removes 'john' from the system.</p>
 </div>
+<script>checkTheme();</script>
 </body>
 </html>

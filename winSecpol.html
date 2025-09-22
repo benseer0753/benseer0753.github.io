@@ -9,7 +9,9 @@
 </head>
 <body>
 
-<div class="mainText">
+<div id="mainText">
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
 
 <h1>Local Security Policy</h1>
 <p class="subtitle">For Windows and Windows Server</p>
@@ -65,5 +67,6 @@ It also shouldn't be too high, or it'll give malicious actors more attempts to c
 <p>These options decide whether the computer keeps a log of administrative and other actions performed on it. How on earth you read them is beyond me, though.</p>
 
 </div>
+<script>checkTheme();</script>
 </body>
 </html>

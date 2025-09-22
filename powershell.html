@@ -9,7 +9,9 @@
 </head>
 <body>
 
-<div class="mainText">
+<div id="mainText">
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
 
 <h1> Useful Powershell Commands </h1>
 <p> Powershell has the potential to be a very powerful tool in the arsenal of a skilled CyberTitan.
@@ -29,5 +31,6 @@ You can change the directory to just "C:\" in order to search the entire filesys
 <h2 id="net"> Using <code>net</code> </h2>
 
 </div>
+<script>checkTheme();</script>
 </body>
 </html>
