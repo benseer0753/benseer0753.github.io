@@ -40,7 +40,7 @@ function lightMode() {
 	document.body.style.color = "black";
 	document.getElementById("mainText").style.borderLeftColor = "Grey";
 	const codes = document.getElementsByTagName("code");
-	console.log(codes.length);
+	//console.log(codes.length);
 	for (let i = 0; i < codes.length; ++i) {
 		codes[i].style.borderColor = "black";
 	}

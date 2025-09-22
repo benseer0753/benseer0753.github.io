@@ -8,15 +8,24 @@ body {
 }
 
 #lightButton {
+	box-sizing: border-box;
+	width: 120px;
+	position: absolute;
+	left: 130px;
 	background-color: Beige;
 	color: black;
+	padding: 3px 5px;
 	border: 1px solid black;
 	border-radius: 2px;
 }
 
 #darkButton {
+	box-sizing: border-box;
+	width: 120px;
+	position: absolute;
 	background-color: #111;
 	color: white;
+	padding: 3px 5px;
 	border: 1px solid white;
 	border-radius: 2px;
 }
