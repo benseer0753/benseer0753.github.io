@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Powershell for CyberTitans</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+
+<div id="mainText">
+
+<h1> Useful Powershell Commands </h1>
+<p> Powershell has the potential to be a very powerful tool in the arsenal of a skilled CyberTitan.
+With practice, it can streamline processes that usually require navigating convoluted menus and make them as easy as typing a few commands.
+</p>
+
+<h2 id="search"> Searching for a File </h2>
+
+<p> Using powershell, we can search for files a lot more quickly and smoothly than by using Explorer. This is often useful for forensics questions, and allows you to do other work while it searches.
+</p>
+<p> The following code searches for a file called "example.html" in the Users directory and all of its subdirectories.
+You can change the directory to just "C:\" in order to search the entire filesystem. You can also use wildcards in the filename. For more on wildcards, see
+<a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.5">here</a>.
+</p>
+<code>Get-ChildItem -Path C:\Users -Filter example.html -Recurse -ErrorAction SilentlyContinue -Force</code>
+
+<h2 id="net"> Using <code>net</code> </h2>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

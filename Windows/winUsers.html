@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Windows - User Management</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+	
+	
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+<h1>User Management</h1>
+<p class="subtitle">For Windows and Windows Server</p>
+
+<h2>Control Panel</h2>
+
+<p> Using Control panel to manage users is one of the simplest ways to manage users, and is what I recommend for beginners. The UI [GLOS] provided makes it simple to tell, at a glance, the type and password status of users.
+Unfortunately, it lacks any way to manage user groups. This makes it only suitable for less complex management tasks.
+</p>
+<h3>Adding / Removing Users, Changing Passwords, and Giving / Revoking Admin Status</h3>
+<p> Adding and removing users in Control panel is a quick and easy 3-step process.
+</p>
+<h4>1. Open Control Panel</h4>
+<p> You can open Control Panel in one of 3 ways. The simplest is to search for it in the start menu, and click on its icon when it appears. <br>
+The second is to either right-click on the start icon or hit WIN-x to open the Power User menu. From there, simply click on the Control Panel option. <br>
+The third is to open the Run dialogue with WIN-r, typing in "Control Panel", and hitting enter.
+
+<h4>2. Navigating to the User Management Menu</h4>
+<p> From the main Control Panel menu, when sorted into the default categories (see fig. n): Click on the "User&nbspAccounts" option, then again on "User&nbspAccounts" on the next screen. From there, click on "Manage another account".</p>
+<p> When the main Control Panel menu is sorted into icons (see fig. n+1): Click on "User Accounts" once (the icons are alphabetical, so it'll be near the bottom), then click on "Manage another account".
+</p>
+
+<h4>3. The Actual Management</h4>
+<p> From here, click on the name or icon of the user you want to manage, then click on the action you want to perform. From there, follow the on-screen instructions.
+
+<h2> Computer Management </h2>
+<p> Using Computer Management (compmgmt.msc) is my preferred way to manage users. It provides a GUI [GLOSS] where you can conveniently manage many parts of your computer.</p>
+
+<h3> Adding / Removing Users</h3>
+<p>When you open Computer Management, click on Local Users and Groups on the left side. The button to add users will be on the right side. 
+Click it and provide the required information to make a new user.</p>
+<p>To delete a user, right click on them and select delete.</p>
+
+<p>To change an account's type between standard and administrator, double-click on them and select the "Member Of" tab. Then, [do the thing]. 
+You can also go to the groups section and double click on a group to manage its members.</p>
+
+<h2> Powershell </h2>
+<p><i><u>Help with commands</u></i></p>
+<p> A quick, direct way to manage users is through the <code>net</code> command. This gives you a text-based way to manage users, usergroups, and many other aspects of your system.</p>
+<p> To manage a user through <code>net</code>, type <code>net&nbspuser&nbspusername</code>, followed by the action you want to perform and any arguments it takes.</p>
+
+<h3> Adding / Removing Users </h3>
+
+<p class="notice"><i>Note: All powershell commands are by default case-insensitive [GLOSS]. This includes usernames and domains, but <b>not</b> passwords. Keep that in mind when managing accounts.</i></p>
+
+<p> Creating users with <code>net</code> is done using the following command:</p>
+<p><code><b>net</b>&nbspuser&nbsp<i>username&nbsppassword</i>&nbsp/ADD</code></p>
+<p> Replace the username value with the name of the user you want to add, and the password value with the password to assign to them. 
+You can also assign passwords to existing users by using their username and removing the <code>/ADD</code> at the end. </p>
+<p>If, instead of a password, a '*' is typed, then a password prompt will be displayed so the password can be typed without revealing it to any onlookers. I recommend typing it directly during competition so that you can verify its spelling.</p>
+
+<p> Removing users is done very similarly, using the following command:</p>
+<p><code><b>net</b>&nbspuser&nbsp<i>username</i>&nbsp/DELETE</code></p>
+<p> Be warned that this action is <i>irreversible</i> and you should make absolutely certain that you want to delete the user.</p>
+
+<h3> Managing User Type </h3>
+
+<p><i>For more details on managing localgroups, see here</i></p>
+<p> Managing user types through <code>net</code> is done using net's localgroup option. This is because "Administrators" is a group of users with all of their permissions set.</p>
+<p>To make a user into an Administrator, use the following command:</p>
+<p><code><b>net</b>&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbsp<i>username</i></code></p>
+<p>To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbspusername</code>.
+<p>To remove a user, replace the <code>/ADD</code> with a <code>/DELETE</code>.</p>
+
+
+<h2> See Also </h2>
+<ul>
+	<li>usergroups</li>
+	<li>Control Panel Overview</li>
+	<li>Computer Management Overview</li>
+	<li><code>net</code> Overview</li>
+</ul>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

@@ -1,16 +1,20 @@
-Layout					-o--- plan
+Layout					---o- pretty much done? I just need to figure out the sidebar.
 Adjustable Width		o---- idea - We need the sidebar to disappear when the screen is narrow, and the theme buttons to be mobile-sized.
 Dark Mode				---o- implemented but could be better. Maybe more themes sometime?
+Glossary				o---- idea
 
  == WINDOWS ==
 User Management			---o- mostly done, could be better
 Uninstallation			--o-- incomplete
 Firewall				o---- idea
 Powershell				-o--- plan
-Password Policies		o---- idea
+secpol.msc				--o-- partially complete, we need the User Rights Assignment and Security Options bits though.
 
  ==  LINUX  ==
 User Management			----o done
 Uninstallation			o---- idea
 Firewall				o---- idea
 Password Policies		-o--- plan
+PAM						--o-- ugly and incomplete. Making it a bit easier to understand would be good.
+SSH						--o-- ugly, but almost complete. needs a link to useful scripts and more info on permissions.
+permissions & chmod		o---- idea
