@@ -17,8 +17,13 @@
 <h1>Local Security Policy</h1>
 <p class="subtitle">For Windows and Windows Server</p>
 
+<p><a href="quickSecpol.html">Quick Reference</a></p>
+
 <p> Managing the local security policies on a system is very important. They control things ranging from password requirements to niche, technical security options.
 Improperly configured security policies pose a risk to the security of the system that can easily be remedied.</p>
+
+<p>To opening the Local Security Policy editor, type "secpol.msc" into the Run dialogue opened with WIN+r.</p>
+<p>You can also edit them in the Local Group Policy Editor (gpedit.msc), in the "Windows Settings" branch, under "Security Settings".</p>
 
 <h2>Account Policies</h2>
 <p> The policies in the Account Policies branch of secpol relate to password requirements and locking accounts after failed sign-ins.</p>
@@ -27,7 +32,7 @@ Improperly configured security policies pose a risk to the security of the syste
 
 <ul>
 <li>Enforce Password History</li>
-<p><b>Recommended: 5</b><br>This is the number of previous passwords to save, in order to prevent users from rotating between a small number of passwords when asked to change them.</p>
+<p><b>Recommended: 24</b><br>This is the number of previous passwords to save, in order to prevent users from rotating between a small number of passwords when asked to change them.</p>
 
 <li>Maximum Password Age</li>
 <p><b>Recommended: 90</b><br>This number, in days, is how long a user can keep the same password before being forced to change it.

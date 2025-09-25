@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>secpol.msc Quick Reference</title>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+
+<h1>Local Security Policy</h1>
+<p class="subtitle">Quick Reference</p>
+<p>If a setting is not visible, simply ignore it.</p>
+
+<h2>Account Policy</h2>
+
+<h3>Password Policy</h3>
+
+<ul>
+	<li>Enforce Password History: 24</li>
+	<li>Maximum Password Age: 90</li>
+	<li>Minimum Password Age: 30</li>
+	<li>Minimum Password Length: 14</li>
+	<li>Password Must Meet Complexity Requirements: Enabled</li>
+	<li>Store Passwords Using Reversible Encryption: Disabled</li>
+</ul>
+
+<h3>Account Lockout Policy</h3>
+
+<ul>
+	<li>Account Lockout Duration: 30</li>
+	<li>Account Lockout Threshold: 5</li>
+	<li>Reset Account Lockout Counter After: 30</li>
+</ul>
+
+<h2>Local Policies</h2>
+
+<h3>Audit Policy</h3>
+
+<ul>
+	<li>All: Success, Failure</li>
+</ul>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

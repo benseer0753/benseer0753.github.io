@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Secure Shell</title>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Secure Shell (SSH)</h1>
+
+<p>SSH is a secure, encrypted way to log in to remote computers. It is useful for people working from home or for working on servers that don't have monitors or other interface tools.
+SSH is available to use on both Windows and Linux, but is much more useful on Linux due to the console being much more powerful there. In CyberTitans, we will only be configuring it on Linux unless told otherwise.
+</p>
+
+<h2>How to Access SSH Configuration</h2>
+
+<p>The configuration files for SSH are stored in one of two locations. The first is the file <code>/etc/ssh/sshd_config</code>.
+The other is in any files in <code>/etc/ssh/ssh_config.d/</code> that end in ".conf".
+</p>
+
+<p>These files should have their permissions set to 0700. You can set this using the following script:</p>
+
+<p><code>I'm gonna put this in later, hold on until then. -B</code></p>
+
+<p>Ensure that the files <code>~/ssh/config</code> for each user has the correct permissions by setting it to 0600 using chmod.</p>
+
+<h2>The Settings</h2>
+
+<p>Most of these settings will likely be configured already, but we still need to check each one to make sure.
+If you add any lines, make sure they go <i>above</i> any Include or Match statements. Essentially, put them at the top of the file.
+When the settings are read, they work from top to bottom.</p>
+
+<div class="bigCode">
+<p>
+Protocol 2<br>
+Ciphers -3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc,chacha20-poly1305@openssh.com<br>
+ClientAliveInterval 15<br>
+ClientAliveCountMax 3<br>
+DisableForwarding yes<br>
+GSSAPIAuthentication no<br>
+HostbasedAuthentication no<br>
+IgnoreRhosts yes<br>
+KexAlgorithms -diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1<br>
+LoginGraceTime 60<br>
+loglevel VERBOSE<br>
+MACs -hmac-md5,hmac-md5-96,hmac-ripemd160,hmac-sha1-96,umac-64@openssh.com,hmac-md5-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com<br>
+MaxAuthTries 4<br>
+MaxSessions 10<br>
+MaxStartups 10:30:60<br>
+PermitEmptyPasswords no<br>
+PermitRootLogin no<br>
+PermitUserEnvironment no<br>
+UsePAM yes
+</div>
+
+<p>After making any changes run the following:</p>
+<p><code>systemctl restart sshd</code></p>
+<p>This will restart the sshd service and apply any changes you have made.</p>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

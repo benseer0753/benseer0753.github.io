@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Pluggable Authentication Modules</title>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Pluggable Authentication Modules (PAM)</h1>
+<h2>Updating / Installing PAM</h2>
+<p>update: libpam-runtime, libpam-modules, libpam-pwquality</p>
+
+<h2>faillock</h2>
+<p>In /etc/security/faillock.conf, add or edit the following lines:</p>
+<div class="bigCode">
+<p>deny = 5<br>
+unlock-time = 900<br>
+root_unlock_time = 60</p>
+</div>
+
+<h2>pam_pwquality</h2>
+<p>module aguments override etc/security/pwquality.conf overrides etc/security/pwquality.conf.d/ files</p>
+<p>For pam_pwquality, there is a hierarchy to which settings take priority. Module arguments in the common-* files override settings in etc/security/pwquality.conf.
+Settings in files in etc/security/pwquality.conf.d/ are overridden by either.
+It is recommended by the CIS to use a *.conf file in etc/security/pwquality.conf.d/ for "clarity, convenience, and durability."
+</p>
+
+<p>Include the following lines:</p>
+
+<div class=bigCode>
+<p>difok = 2<br>
+minlen = 14<br>
+minclass = 0<br>
+dcredit = 0<br>
+ucredit = 0<br>
+ocredit = 0<br>
+lcredit = 0<br>
+maxrepeat = 3<br>
+maxsequence = 3<br>
+enforce_for_root<br>
+</p>
+</div>
+
+<p>Remove all lines containing "dictcheck" and "enforcing". This, counterintuitively, enables them because their default values are 1.</p>
+
+<h2>pam_pwhistory</h2>
+<p>The following should all be parameters on the pam_pwhistory line in common-password:<p>
+<p><code>remember=24 enforce_for_root use_authtok</code></p>
+
+<h2>pam_unix</h2>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

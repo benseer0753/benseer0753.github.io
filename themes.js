@@ -33,6 +33,10 @@ function darkMode() {
 	for (let i = 0; i < codes.length; ++i) {
 		codes[i].style.borderColor = "white";
 	}
+	const bigCodes = document.getElementsByClassName("bigCode");
+	for (let i = 0; i < bigCodes.length; ++i) {
+		bigCodes[i].style.borderColor = "white";
+	}
 }
 
 function lightMode() {
@@ -43,5 +47,9 @@ function lightMode() {
 	//console.log(codes.length);
 	for (let i = 0; i < codes.length; ++i) {
 		codes[i].style.borderColor = "black";
+	}
+	const bigCodes = document.getElementsByClassName("bigCode");
+	for (let i = 0; i < bigCodes.length; ++i) {
+		bigCodes[i].style.borderColor = "black";
 	}
 }

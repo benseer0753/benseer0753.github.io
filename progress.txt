@@ -1,16 +1,16 @@
 Layout					-o--- plan
-Adjustable Width		o---- idea
-Dark Mode				o---- idea
+Adjustable Width		o---- idea - We need the sidebar to disappear when the screen is narrow, and the theme buttons to be mobile-sized.
+Dark Mode				---o- implemented but could be better. Maybe more themes sometime?
 
  == WINDOWS ==
-User Management			--o-- incomplete
+User Management			---o- mostly done, could be better
 Uninstallation			--o-- incomplete
 Firewall				o---- idea
 Powershell				-o--- plan
 Password Policies		o---- idea
 
  ==  LINUX  ==
-User Management			-o--- plan
+User Management			----o done
 Uninstallation			o---- idea
 Firewall				o---- idea
 Password Policies		-o--- plan

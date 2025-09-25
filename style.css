@@ -53,8 +53,22 @@ code {
 	border: 1px solid black;
 }
 
+.bigCode {
+	font-family: monospace;
+	padding: 0 2px;
+	border-radius: 2px;
+	border: 1px solid black;
+	overflow: auto;
+	white-space: nowrap;
+}
+
 .notice {
 	border-left: 5px solid goldenrod;
 	padding-left: 5px;
 	background: rgba(255, 193, 37, 0.2);
+}
+
+.subtitle {
+	font-style: italic;
+	margin-top: -15px;
 }
