@@ -1,14 +1,14 @@
 Layout					---o- pretty much done? I just need to figure out the sidebar.
 Adjustable Width		o---- idea - We need the sidebar to disappear when the screen is narrow, and the theme buttons to be mobile-sized.
-Dark Mode				---o- implemented but could be better. Maybe more themes sometime?
+Dark Mode				---o- links are ugly, we need a better colour for them.
 Glossary				o---- idea
 
  == WINDOWS ==
 User Management			---o- mostly done, could be better
 Uninstallation			--o-- incomplete
-Firewall				o---- idea
+Firewall				-o--- plan. Figuring out legible instructions is gonna be a pain.
 Powershell				-o--- plan
-secpol.msc				--o-- partially complete, we need the User Rights Assignment and Security Options bits though.
+secpol.msc				--o-- partially complete, we need to add blurbs to URA and add Security Options segment
 
  ==  LINUX  ==
 User Management			----o done
