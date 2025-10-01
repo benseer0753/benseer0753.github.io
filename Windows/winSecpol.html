@@ -60,7 +60,7 @@ Usually, they're stored using unreversible encryption, so enabling this is a sec
 <p><b>Recommended: 30</b><br>This number, in minutes, is how long the account should be locked out once enough failed logins occur.</p>
 
 <li>Account Lockout Threshold</li>
-<p><b>Recommended: 5</b><br>This is how many failed attempts are needed to trigger the aaccount lockout. It shouldn't be too low, otherwise a series of honest typos could trigger it.
+<p><b>Recommended: 5</b><br>This is how many failed attempts are needed to trigger the account lockout. It shouldn't be too low, otherwise a series of honest typos could trigger it.
 It also shouldn't be too high, or it'll give malicious actors more attempts to crack the password. 5 is a good middle-ground.</p>
 
 <li>Reset Account Lockout Counter After</li>
@@ -71,6 +71,180 @@ It also shouldn't be too high, or it'll give malicious actors more attempts to c
 <h3>Audit Policy</h3>
 <p>The Audit Policy is by far the simplest of the three. All you need to do is go into every option and check success and failure.</p>
 <p>These options decide whether the computer keeps a log of administrative and other actions performed on it. How on earth you read them is beyond me, though.</p>
+
+<h3>User Rights Assignment</h3>
+
+<p>Here, we define what users are allowed to do and what rights they have.</p>
+
+<ul>
+	<li>Access Credential Manager as a trusted caller</li>
+	<p><b>Recommended: No-one</b><br>
+	This setting is only used by Credential Manager when backing up and restoring systems. No users should have this permission, as it could allow them to access other user's credentials.
+	</p>
+	
+	<li>Access this compute from the network</li>
+	<p><b>Recommended: Administrators, Remote Desktop Users</b><br>
+	It's good to make sure only trusted users are allowed to access the computer remotely. This reduces the attack surface of the computer and gives fewer opportunities to malicious actors.
+	</p>
+	
+	<li>Act as part of the operating system</li>
+	<p><b>Recommended: No-one</b><br>
+	Anyone with this right can completely control the computer and even erase any trace of their activities. It is incredibly hazardous to give to people, and should not be used.
+	</p>
+	
+	<li>Adlust memory quotas for a process</li>
+	<p><b>Recommended: Administrators, LOCAL SERVICE,  NETWORK SERVICE</b><br>
+	This permission allows a user to adjust how much memory is available to a process. This can by very useful for fine-tuning systems, but in the wrong hands could lead to denial-of-service.
+	</p>
+	
+	<li>Allow log on locally</li>
+	<p><b>Recommended: Administrators, Users</b><br>
+	This controls who can login to the computer from the console. Illegitimate users, if given this permission, could login and use malware to elevate their privileges. 
+	If legitimate users are not allowed to login, then the computer will be of little use to anybody.
+	</p>
+	
+	<!-- From here forward, the rational blurbs are left blank for time -->
+	<!-- I'll add them in later if I get the time to do it. It's just paraphrasing from the benchmark. -->
+	
+	<li>Allow log on through Remote Desktop Services</li>
+	<p><b>Recommended: Administrators, Remote Desktop Users</b><br>
+	</p>
+	
+	<li>Back up files and directories</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Change the system time</li>
+	<p><b>Recommended: Administrators, LOCAL SERVICE</b><br>
+	</p>
+	
+	<li>Change the time zone</li>
+	<p><b>Recommended:Administrators, LOCAL SERVICE, Users</b><br>
+	</p>
+	
+	<li>Create a pagefile</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Create a token object</li>
+	<p><b>Recommended: No-one</b><br>
+	</p>
+	
+	<li>Create global objects</li>
+	<p><b>Recommended:Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE</b><br>
+	</p>
+	
+	<li>Create permanent shared objects</li>
+	<p><b>Recommended: No-one</b><br>
+	</p>
+	
+	<li>Create symbolic links</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Debug programs</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Deny access to this computer to from the network</li>
+	<p><b>Recommended: Guests, Local Account</b><br>
+	</p>
+	
+	<li>Deny log on as a batch job</li>
+	<p><b>Recommended: Guests</b><br>
+	</p>
+	
+	<li>Deny log on as a service</li>
+	<p><b>Recommended: Guests</b><br>
+	</p>
+	
+	<li>Deny log on locally</li>
+	<p><b>Recommended: Guests</b><br>
+	<</p>
+	
+	<li>Deny log on through remote desktop services</li>
+	<p><b>Recommended: Guests</b><br>
+	</p>
+	
+	<li>Enable computer and user accounts to be trusted for delegation</li>
+	<p><b>Recommended: No-one</b><br>
+	</p>
+	
+	<li>Force shutdown from a remote system</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Generate security audits</li>
+	<p><b>Recommended: LOCAL SERVICE, NETWORK SERVICE</b><br>
+	</p>
+	
+	<li>Impersonate a client after authentication</li>
+	<p><b>Recommended: Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE</b><br>
+	</p>
+	
+	<li>Increase scheduling priority</li>
+	<p><b>Recommended: Administrators, Window Manager\Window Manager Group</b><br>
+	</p>
+	
+	<li>Load and unload device drivers</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Lock pages in memory</li>
+	<p><b>Recommended: No-one</b><br>
+	</p>
+	
+	<li>Log on as batch job</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Log on as service</li>
+	<p><b>Recommended: WDAGUtilityAccount</b><br>
+	</p>
+	
+	<li>Manage auditing and security log</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Modify an object label</li>
+	<p><b>Recommended: No-one</b><br>
+	</p>
+	
+	<li>Modify firmware environment labels</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Perform volume maintenance tasks</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Profile single process</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Profile system performance</li>
+	<p><b>Recommended: Administrators, NT SERVICE\WdiServiceHost</b><br>
+	</p>
+	
+	<li>Replace a process level token</li>
+	<p><b>Recommended: LOCAL SERVICE, NETWORK SEVICE</b><br>
+	</p>
+	
+	<li>Restore files and directories</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+	
+	<li>Shut down the system</li>
+	<p><b>Recommended: Administrators, Users</b><br>
+	</p>
+	
+	<li>Take ownership of files or other objects</li>
+	<p><b>Recommended: Administrators</b><br>
+	</p>
+
+</ul>
+
+<h3>Security Options</h3>
 
 </div>
 <script>checkTheme();</script>

@@ -62,10 +62,25 @@ code {
 	white-space: nowrap;
 }
 
+.todo {
+	border-left: 5px solid #FF00FF;
+	padding-left: 5px;
+	background: rgba(255, 0, 255, 0.2);
+	font-style: italic;
+}
+
 .notice {
 	border-left: 5px solid goldenrod;
 	padding-left: 5px;
 	background: rgba(255, 193, 37, 0.2);
+	font-style: italic;
+}
+
+.warning {
+	border-left: 5px solid #Da2020;
+	padding-left: 5px;
+	background: rgba(218, 32, 32, 0.2);
+	font-style: italic;
 }
 
 .subtitle {
