@@ -9,6 +9,8 @@ Uninstallation			--o-- incomplete
 Firewall				-o--- plan. Figuring out legible instructions is gonna be a pain.
 Powershell				-o--- plan
 secpol.msc				--o-- partially complete, we need to add blurbs to URA and add Security Options segment
+Adv. Audit Policy		o----
+Services				o----
 
  ==  LINUX  ==
 User Management			----o done
