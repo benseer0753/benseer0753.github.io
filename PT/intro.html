@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Packet Tracer Notes</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="themes.js"></script>
+</head>
+<body>
+
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+
+<div id="mainText">
+
+<h1>Packet Tracer</h1>
+
+<h2>Initial Configuration</h2>
+<h3>Hostname</h3>
+<p><code>hostname(config)#hostname <i>newHostName</i></code></p>
+
+<h3>Enabling Passwords</h3>
+<h4>User Exec Password</h4>
+<p class="bigCode">
+hn(config)#line console 0<br>
+hn(config-line)#password <i>password</i><br>
+hn(config-line)#login
+</p>
+<p>Do the same with <code>line vty 0 15</code> instead of <code>line console 0</code>.</p>
+
+<h4>Privileged Exec Password</h4>
+<p class="bigCode">
+hostname(config)#enable secret <i>password</i><br>
+hostname(config)#service password-encryption
+</p>
+
+<h3>Banner</h3>
+<p><code>hn(config)#banner motd #Put your banner here!#</code></p>
+
+<h3>Configuration Files</h3>
+<p>To show the current configuration, saved in volatile RAM:</p>
+<p><code>hostname#show running-config</code></p>
+<p>To show the startup configuration, which is in non-volatile memory:</p>
+<p><code>hostname#show startup-config</code></p>
+
+<h3>IP Address</h3>
+<h4>Assign an IP Adress to an Interface</h4>
+<p class="bigCode">
+hostname(config)#interface vlan 1<br>
+hostname(config-if)#ip address <i>address mask</i><br>
+hostname(config-if)#no shutdown
+</p>
+<h4>Show IP information</h4>
+<p><code>hostname#show ip interface brief</code></p>
+
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

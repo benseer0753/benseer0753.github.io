@@ -29,7 +29,16 @@ You can change the directory to just "C:\" in order to search the entire filesys
 </p>
 <code>Get-ChildItem -Path C:\Users -Filter example.html -Recurse -ErrorAction SilentlyContinue -Force</code>
 
-<h2 id="net"> Using <code>net</code> </h2>
+<h2 id="hash">Finding the Hash of a File</h2>
+<p>In powershell, we can easily find the hash of a file using the following command:</p>
+<p><code>Get-FileHash -Algorithm <i>algorithm filepath</i></code></p>
+<p>If the hash is asked for, it will specify what algorithm to use in the question.</p>
+
+<h2 id="netstat">Using <code>netstat</code></h2>
+<p>If we need to list all currently listened-to ports, such as for a forensics question, we will use this command:</p>
+<p><code>netstat -abn -p <i>protocol</i></code></p>
+
+
 
 </div>
 <script>checkTheme();</script>
