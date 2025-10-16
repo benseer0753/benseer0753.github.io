@@ -53,6 +53,18 @@ code {
 	border: 1px solid black;
 }
 
+a:link {
+	color: #00C0E0;
+}
+
+a:visited {
+	color: #007090;
+}
+
+a:hover {
+	background-color: rgba(128, 128, 128, 0.2);
+}
+
 .bigCode {
 	font-family: monospace;
 	padding: 0 2px;

@@ -4,7 +4,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
-	<title>Windows - Misc</title>
+	<title>Windows - Basic Checklist</title>
 	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
 	<script src="../themes.js"></script>
 </head>
@@ -13,19 +13,25 @@
 <button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
 <div id="mainText">
 
-<h1>Windows Miscellaneous</h1>
+<h1>Services</h1>
 
-<h2>Remote Assistance</h2>
-<p>Remote Assistance connections must be disabled. The menu can either be opened by running sysdm.cpl or through searching "assistance" in control panel.</p>
-<p>Ensure that remote assistancce is disabled, and check the README on whether remote desktop should be permitted.</p>
+<p>Some Windows features are enabled by default, when they are either insecure or unnecessary.</p>
 
-<h2>Browser Update</h2>
-<h3>Firefox</h3>
-<h3>Google Chrome</h3>
+<p class="notice">Remember: the README takes priority over all instructions here. If the README says to keep it, you keep it.</p>
 
-<h2>Media Files</h2>
-<p><a href = "./powershell.html#search">See here for more details.</a></p>
+<h2>Features to Disable</h2>
 
+<ul>
+	<li>Active Directory Services</li>
+	<li>Internet Information Services</li>
+	<li>Media Features</li>
+	<li>Print and Document Services</li>
+	<li>RIP Listener</li>
+	<li>Simple TCP/IP</li>
+	<li>SMB</li>
+	<li>Telnet</li>
+	<li>Work Folders</li>
+</ul>
 
 </div>
 <script>checkTheme();</script>
