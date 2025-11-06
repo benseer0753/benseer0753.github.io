@@ -31,40 +31,40 @@ Improperly configured security policies pose a risk to the security of the syste
 <p> Included here are the policies defining password requirements. In order, these are:
 
 <ul>
-<li>Enforce Password History</li>
-<p><b>Recommended: 24</b><br>This is the number of previous passwords to save, in order to prevent users from rotating between a small number of passwords when asked to change them.</p>
+	<li>Enforce Password History</li>
+	<p><b>Recommended: 24</b><br>This is the number of previous passwords to save, in order to prevent users from rotating between a small number of passwords when asked to change them.</p>
 
-<li>Maximum Password Age</li>
-<p><b>Recommended: 90</b><br>This number, in days, is how long a user can keep the same password before being forced to change it.
-These prevents old, potentially compromised passwords from remaining on the system.</p>
+	<li>Maximum Password Age</li>
+	<p><b>Recommended: 90</b><br>This number, in days, is how long a user can keep the same password before being forced to change it.
+	These prevents old, potentially compromised passwords from remaining on the system.</p>
 
-<li>Minimum Password Age</li>
-<p><b>Recommended: 30</b><br>This number, in days, is how long after changing a password before a user can change it again.</p>
+	<li>Minimum Password Age</li>
+	<p><b>Recommended: 30</b><br>This number, in days, is how long after changing a password before a user can change it again.</p>
 
-<li>Minimum Password Length</li>
-<p><b>Recommended: 14</b><br>This is the minimum number of characters that a valid password can be. 14, for historical reasons, is the maximum on windows machines. It's also a good length for us.</p>
+	<li>Minimum Password Length</li>
+	<p><b>Recommended: 14</b><br>This is the minimum number of characters that a valid password can be. 14, for historical reasons, is the maximum on windows machines. It's also a good length for us.</p>
 
-<li>Password Must Meet Complexity Requirements</li>
-<p><b>Recommended: Enabled</b><br>Without this enabled, none of the other password requirements take effect. They're not much use to us unless they're turned on, so make sure to enable this.</p>
+	<li>Password Must Meet Complexity Requirements</li>
+	<p><b>Recommended: Enabled</b><br>Without this enabled, none of the other password requirements take effect. They're not much use to us unless they're turned on, so make sure to enable this.</p>
 
-<li>Store Passwords Using Reversible Encryption</li>
-<p><b>Recommended: Disabled</b><br>Windows already stores the passwords encrypted by default. This makes that encryption reversible, meaning that passwords can be learned just by finding them and unencrypting them.
-Usually, they're stored using unreversible encryption, so enabling this is a security risk.</p>
+	<li>Store Passwords Using Reversible Encryption</li>
+	<p><b>Recommended: Disabled</b><br>Windows already stores the passwords encrypted by default. This makes that encryption reversible, meaning that passwords can be learned just by finding them and unencrypting them.
+	Usually, they're stored using unreversible encryption, so enabling this is a security risk.</p>
 </ul>
 
 <h3>Account Lockout Policy</h3>
 <p>These three policies dictate what should happen after consecutive failed login attempts:</p>
 
 <ul>
-<li>Account Lockout Duration</li>
-<p><b>Recommended: 30</b><br>This number, in minutes, is how long the account should be locked out once enough failed logins occur.</p>
+	<li>Account Lockout Duration</li>
+	<p><b>Recommended: 30</b><br>This number, in minutes, is how long the account should be locked out once enough failed logins occur.</p>
 
-<li>Account Lockout Threshold</li>
-<p><b>Recommended: 5</b><br>This is how many failed attempts are needed to trigger the account lockout. It shouldn't be too low, otherwise a series of honest typos could trigger it.
-It also shouldn't be too high, or it'll give malicious actors more attempts to crack the password. 5 is a good middle-ground.</p>
+	<li>Account Lockout Threshold</li>
+	<p><b>Recommended: 5</b><br>This is how many failed attempts are needed to trigger the account lockout. It shouldn't be too low, otherwise a series of honest typos could trigger it.
+	It also shouldn't be too high, or it'll give malicious actors more attempts to crack the password. 5 is a good middle-ground.</p>
 
-<li>Reset Account Lockout Counter After</li>
-<p><b>Recommended: 30</b><br>This is how many minutes it takes for the failed login attempt counter to reset.</p>
+	<li>Reset Account Lockout Counter After</li>
+	<p><b>Recommended: 30</b><br>This is how many minutes it takes for the failed login attempt counter to reset.</p>
 </ul>
 <h2>Local Policies</h2>
 <p>The Local Policies branch is much more varied, containing the Audit Policy, User Rights Assignment, and Security Options nodes.</p>
@@ -74,7 +74,9 @@ It also shouldn't be too high, or it'll give malicious actors more attempts to c
 
 <h3>User Rights Assignment</h3>
 
-<p>Here, we define what users are allowed to do and what rights they have.</p>
+<p>Here, we control which users are allowed to do what. Each setting can be
+set to a list of either users or groups. The recommended settings show the list
+of users or groups, separated by a comma and a space.</p>
 
 <ul>
 	<li>Access Credential Manager as a trusted caller</li>
@@ -103,7 +105,7 @@ It also shouldn't be too high, or it'll give malicious actors more attempts to c
 	If legitimate users are not allowed to login, then the computer will be of little use to anybody.
 	</p>
 	
-	<!-- From here forward, the rational blurbs are left blank for time -->
+	<!-- From here forward, the rationale blurbs are left blank for time -->
 	<!-- I'll add them in later if I get the time to do it. It's just paraphrasing from the benchmark. -->
 	
 	<li>Allow log on through Remote Desktop Services</li>
@@ -160,7 +162,7 @@ It also shouldn't be too high, or it'll give malicious actors more attempts to c
 	
 	<li>Deny log on locally</li>
 	<p><b>Recommended: Guests</b><br>
-	<</p>
+	</p>
 	
 	<li>Deny log on through remote desktop services</li>
 	<p><b>Recommended: Guests</b><br>
@@ -245,6 +247,17 @@ It also shouldn't be too high, or it'll give malicious actors more attempts to c
 </ul>
 
 <h3>Security Options</h3>
+
+<h2>Interactive Logon</h2>
+<ul>
+	<li>Do not require CTRL+ALT+DEL</li>
+	<p><b>Recommended: Disabled</b><br>
+	</p>
+
+	<li>Don't display username at sign-in</li>
+	<p><b>Recommended: Enabled</b><br>
+	</p>
+</ul>
 
 </div>
 <script>checkTheme();</script>
