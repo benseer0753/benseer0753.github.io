@@ -26,16 +26,16 @@ function setLightMode() {
 
 function darkMode() {
 	document.body.style.backgroundColor = "#111";
-	document.body.style.color = "white";
+	document.body.style.color = "Beige";
 	document.getElementById("mainText").style.borderLeftColor = "dimGrey";
 	const codes = document.getElementsByTagName("code");
 	//console.log(codes.length);
 	for (let i = 0; i < codes.length; ++i) {
-		codes[i].style.borderColor = "white";
+		codes[i].style.borderColor = "Beige";
 	}
 	const bigCodes = document.getElementsByClassName("bigCode");
 	for (let i = 0; i < bigCodes.length; ++i) {
-		bigCodes[i].style.borderColor = "white";
+		bigCodes[i].style.borderColor = "Beige";
 	}
 }
 

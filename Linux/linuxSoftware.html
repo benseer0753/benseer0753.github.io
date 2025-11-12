@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Linux - Software Management</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Linux Software Management</h1>
+<p>Software in Linux is organized in packages. These contain all of the files a
+given program needs to run, and a list of other packages it depends on to run.
+</p>
+
+<p>These packages are managed by, you guessed it, a package manager. The one we
+deal with most often is APT, the Advanced Package Tool. It comes pre-installed
+on all Debian-based Linux distributions. This includes Ubuntu and Mint, the two
+we use in CyberTitans.
+</p>
+
+<h2>What is APT?</h2>
+<p>APT is the package manager we use on Ubuntu and Mint images. It is how we
+install, update, and uninstall software. It is run from the command line, and
+has a general syntax of:
+</p>
+
+<p><code><b>apt</b> <i>action package</i></code></p>
+
+<p>Depending on what action you supply, you might not need a specific package
+name.</p>
+
+<h2>(Un)installation</h2>
+<p>Installing and uninstalling packages with APT is simple. To install, it's
+<code><b>sudo apt install</b> <i>package</i></code>, where <i>package</i> is
+the name of the package.
+</p>
+
+<p>Take note, however, that the technical package name <i>is not</i> always the
+same as the name displayed in the app list. Usually, it's similar, but you can
+look up software to find its technical name.
+</p>
+
+<p>To uninstall, it's very similar. <code><b>sudo apt remove</b>
+<i>package</i></code> will remove the specified package. Replacing <code>remove</code> with
+<code>purge</code> will remove not just the package, but any packages it
+depends on that no longer have a use.</p>
+
+<p>Generally, <code>remove</code> works perfectly fine, and is a lot less risky
+than <code>purge</code>. I recommend only using <code>purge</code> if you're
+absolutely certain what you're doing. It can make quite a mess if misused.
+</p>
+
+<h2>Updating / Upgrading</h2>
+<p>To update software (called upgrading in apt) you use two commands.</p>
+<p>The first,</p>
+<p><code>sudo apt update</code></p>
+<p>just updates the list of available packages from your default sources. This
+makes sure your computer knows which versions of software are available so that
+upgrades are not missed.</p>
+<p>Then, after that has completed, run</p>
+<p><code>sudo apt upgrade</code></p>
+<p>This does the actual installation of the upgrades. It may take a while, so
+it's a good option for doing during lunch.</p>
+
+<h2>Common Malware</h2>
+<p>The following is a list of common packages that we need to remove:</p>
+<p class="notice">Remember: if the README says to keep it, we keep it. These
+are just common ones to remove.</p>
+<ul>
+  <li><code>wireshark</code></li>
+  <li><code>aisleriot</code></li>
+  <li><code>ophcrack</code></li>
+  <li><code>apache2</code></li>
+<ul>
+
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>
