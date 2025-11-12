@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Uncomplicated Firewall</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Uncomplicated Firewall</h1>
+
+<h2>What is it?</h2>
+<p>A firewall simply filters what connections can be made to a computer.
+</p>
+
+<h2>How to Install UFW</h2>
+<p><code>sudo apt install ufw</code></p>
+
+<h2>Configuring UFW</h2>
+<p>To enable UFW, run the following:</p>
+<p><code>sudo ufw enable</code></p>
+<p>To check your UFW configuration, run <code>sudo ufw status verbose</code>
+</p>
+<p>It should return the following:</p>
+<p class="bigCode">
+Status: active<br>
+Logging: on (low)<br>
+Default: deny (incoming), allow (outgoing), disabled (routed)<br>
+New profiles: skip
+</p>
+
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

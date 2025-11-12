@@ -15,7 +15,7 @@ Services                o----
  ==  LINUX  ==
 User Management         ----o done
 Software Management     ----o I think it's done for now.
-Firewall                o---- idea
+UFW                     --o-- started, needs advanced
 Password Policies       -o--- plan
 PAM                     --o-- ugly and incomplete. Making it a bit easier to understand would be good.
 SSH                     --o-- ugly, but almost complete. needs a link to useful scripts and more info on permissions.
