@@ -5,17 +5,17 @@ Glossary                o---- idea
 
  == WINDOWS ==
 User Management         ---o- mostly done, could be better
-Uninstallation          --o-- incomplete
-Firewall                -o--- plan. Figuring out legible instructions is gonna be a pain.
+Uninstallation          ---o- needs more detail about the regedit section
+Firewall                --o-- add more detail about gpedit
 Powershell              -o--- plan
-secpol.msc              --o-- partially complete, we need to add blurbs to URA and add Security Options segment
+secpol.msc              ---o- added a new style for common vulns
 Adv. Audit Policy       o----
-Services                o----
+Services                -o--- started
 
  ==  LINUX  ==
 User Management         ----o done
 Software Management     ----o I think it's done for now.
-UFW                     --o-- started, needs advanced
+UFW                     ---o- a bit nicer than before
 Password Policies       -o--- plan
 PAM                     --o-- ugly and incomplete. Making it a bit easier to understand would be good.
 SSH                     --o-- ugly, but almost complete. needs a link to useful scripts and more info on permissions.
