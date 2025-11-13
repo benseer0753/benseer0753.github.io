@@ -29,12 +29,16 @@ When in category view, click on "System and Security", then on "Windows Defender
 
 <h2>Advanced Firewall Management with the Group Policy Editor</h2>
 
-<p class="todo">TODO: boot up gpedit.msc and find a way to phrase this that isn't mind-boggling</p>
-
-<p class="warning">This is what a warning looks like! it contains important information you need to pay attention to!</p>
-
-<h3>Domain Profile</h3>
-
+<p>Open the MMC, then File &gt; Add/Remove Snap-ins. Add in Windows Firewall with
+Advaced Security.</p>
+<p>Go to Windows Firewall Properties. You will see three tabs: Domain, Private,
+and Public.</p>
+<p>These are the three types of network in Windows. I'm not sure if these are
+used much in modern windows.</p>
+<p>Go into each tab and ensure the firewall is enabled.</p>
+<p>Inbound connections should be blocked, outbound should be allowed.</p>
+<p>Logging should be set to both Log dropped and Logged Successful Packets</p>
+<p>Increase the Log size Limit to 6500</p>
 
 </div>
 <script>checkTheme();</script>

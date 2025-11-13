@@ -16,7 +16,11 @@
 
 <h1> Uninstalling Programs </h1>
 <p> Often, there will be unwanted programs and applications on the images. Remember: never uninstall a program that is mentioned as required in the README.
-You also should not uninstall: VMware tools [INCLUDE: the other shit].
+You also should not uninstall:
+<ul>
+  <li>VMWare Tools</li>
+  <li>Microsoft Visual C++</li>
+  <li>Microsoft .NET</li>
 </p>
 
 <p> Also get rid of the %APPDATA% files</p>
@@ -35,6 +39,11 @@ You also should not uninstall: VMware tools [INCLUDE: the other shit].
 <p> The best place to uninstall unwanted programs is in Control Panel. To navigate to the Programs and Features page while in categories view, click on "Uninstall a program" below "Programs".
 To navigate there from icons view, click on "Programs and Features".</p>
 <p> From here, double-click on the app you want to uninstall, then click [YES] when prompted. Follow the instructions on any uninstaller that opens, making sure to remove as many associated files as possible.</p>
+
+<h2>Registry</h2>
+<p>Check out HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/Uninstall</p>
+<p>Apparently there's some way to hide programs from the control panel
+uninstall menu.</p>
 
 </div>
 <script>checkTheme();</script>

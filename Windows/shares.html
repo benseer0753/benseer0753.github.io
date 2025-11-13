@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Network Shares</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Network Shares</h1>
+<h2>Computer Management</h2>
+<p>You can manage shared files and folders using Computer Management
+(compmgmt.msc)
+</p>
+<p>From here, you can add and remove shares. The three defaults are IPC$, C$,
+and ADMIN$. These do not need to be removed. All others, unless specified in
+the README, can be removed.
+</p>
+<p>Shares with a '$' in them are hidden, and cannot be seen using usual means.
+They are still accessible, though, and need to be removed just the same.
+</p>
+
+<h2>Using <code>net</code></h2>
+<p>Open a command prompt or PowerShell window as administrator.</p>
+<p>Select "yes" if a UAC prompt appears.</p>
+<p>Type in <code>net share</code> to list all active shares on the computer.</p>
+<p>To delete a share, use <code>net share /DELETE <i>name</i></code>, replacing
+"name" with the name of the share.
+</p>
+
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

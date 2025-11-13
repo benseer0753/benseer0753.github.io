@@ -81,6 +81,9 @@ You can also assign passwords to existing users by using their username and remo
 <p>To add a user to Administrators, type <code>net&nbsplocalgroup&nbspAdministrators&nbsp/ADD&nbspusername</code>.
 <p>To remove a user, replace the <code>/ADD</code> with a <code>/DELETE</code>.</p>
 
+<p>Do this with every user's username. apparently. (Not needed in any
+competition so far. I'll find a way to automate it sometime.) -B</p>
+<p><code>wmic UserAccount where Name="USERNAME" set PasswordExpires=True</code><p>
 
 <h2> See Also </h2>
 <ul>

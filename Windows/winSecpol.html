@@ -31,23 +31,23 @@ Improperly configured security policies pose a risk to the security of the syste
 <p> Included here are the policies defining password requirements. In order, these are:
 
 <ul>
-	<li>Enforce Password History</li>
+	<li class="pointpolicy">Enforce Password History</li>
 	<p><b>Recommended: 24</b><br>This is the number of previous passwords to save, in order to prevent users from rotating between a small number of passwords when asked to change them.</p>
 
-	<li>Maximum Password Age</li>
+	<li class="pointpolicy">Maximum Password Age</li>
 	<p><b>Recommended: 90</b><br>This number, in days, is how long a user can keep the same password before being forced to change it.
 	These prevents old, potentially compromised passwords from remaining on the system.</p>
 
-	<li>Minimum Password Age</li>
+	<li class="pointpolicy">Minimum Password Age</li>
 	<p><b>Recommended: 30</b><br>This number, in days, is how long after changing a password before a user can change it again.</p>
 
-	<li>Minimum Password Length</li>
+	<li class="pointpolicy">Minimum Password Length</li>
 	<p><b>Recommended: 14</b><br>This is the minimum number of characters that a valid password can be. 14, for historical reasons, is the maximum on windows machines. It's also a good length for us.</p>
 
-	<li>Password Must Meet Complexity Requirements</li>
+	<li class="pointpolicy">Password Must Meet Complexity Requirements</li>
 	<p><b>Recommended: Enabled</b><br>Without this enabled, none of the other password requirements take effect. They're not much use to us unless they're turned on, so make sure to enable this.</p>
 
-	<li>Store Passwords Using Reversible Encryption</li>
+	<li class="pointpolicy">Store Passwords Using Reversible Encryption</li>
 	<p><b>Recommended: Disabled</b><br>Windows already stores the passwords encrypted by default. This makes that encryption reversible, meaning that passwords can be learned just by finding them and unencrypting them.
 	Usually, they're stored using unreversible encryption, so enabling this is a security risk.</p>
 </ul>
@@ -56,14 +56,14 @@ Improperly configured security policies pose a risk to the security of the syste
 <p>These three policies dictate what should happen after consecutive failed login attempts:</p>
 
 <ul>
-	<li>Account Lockout Duration</li>
+	<li class="pointpolicy">Account Lockout Duration</li>
 	<p><b>Recommended: 30</b><br>This number, in minutes, is how long the account should be locked out once enough failed logins occur.</p>
 
-	<li>Account Lockout Threshold</li>
+	<li class="pointpolicy">Account Lockout Threshold</li>
 	<p><b>Recommended: 5</b><br>This is how many failed attempts are needed to trigger the account lockout. It shouldn't be too low, otherwise a series of honest typos could trigger it.
 	It also shouldn't be too high, or it'll give malicious actors more attempts to crack the password. 5 is a good middle-ground.</p>
 
-	<li>Reset Account Lockout Counter After</li>
+	<li class="pointpolicy">Reset Account Lockout Counter After</li>
 	<p><b>Recommended: 30</b><br>This is how many minutes it takes for the failed login attempt counter to reset.</p>
 </ul>
 <h2>Local Policies</h2>
@@ -84,7 +84,7 @@ of users or groups, separated by a comma and a space.</p>
 	This setting is only used by Credential Manager when backing up and restoring systems. No users should have this permission, as it could allow them to access other user's credentials.
 	</p>
 	
-	<li>Access this compute from the network</li>
+	<li class="pointpolicy">Access this computer from the network</li>
 	<p><b>Recommended: Administrators, Remote Desktop Users</b><br>
 	It's good to make sure only trusted users are allowed to access the computer remotely. This reduces the attack surface of the computer and gives fewer opportunities to malicious actors.
 	</p>
@@ -116,6 +116,10 @@ of users or groups, separated by a comma and a space.</p>
 	<p><b>Recommended: Administrators</b><br>
 	</p>
 	
+	<li class="pointpolicy">Bypass traverse checking</li>
+	<p><b>Recommended: No One</b><br>
+	</p>
+
 	<li>Change the system time</li>
 	<p><b>Recommended: Administrators, LOCAL SERVICE</b><br>
 	</p>
@@ -172,7 +176,7 @@ of users or groups, separated by a comma and a space.</p>
 	<p><b>Recommended: No-one</b><br>
 	</p>
 	
-	<li>Force shutdown from a remote system</li>
+	<li class="pointpolicy">Force shutdown from a remote system</li>
 	<p><b>Recommended: Administrators</b><br>
 	</p>
 	
@@ -247,10 +251,31 @@ of users or groups, separated by a comma and a space.</p>
 </ul>
 
 <h3>Security Options</h3>
+<ul>
+	<li class="pointpolicy">Prevent users from installing printer drivers</li>
+	<p><b>Recommended: Enabled</b><br>
+	</p>
+
+	<li class="pointpolicy">Prevent CD-ROM access</li>
+	<p><b>Recommended: Enabled</b><br>
+	</p>
+
+	<li class="pointpolicy">Do not allow anonymous enumeration of SAM accounts</li>
+	<p><b>Recommended: Enabled</b><br>
+	</p>
+
+	<li class="pointpolicy">Do not allow anonymous enumeration of SAM accounts and shares</li>
+	<p><b>Recommended: Enabled</b><br>
+	</p>
+
+	<li class="pointpolicy">Name pipes that can be accessed remotely</li>
+	<p><b>Recommended: Disabled</b><br>
+	</p>
+</ul>
 
 <h2>Interactive Logon</h2>
 <ul>
-	<li>Do not require CTRL+ALT+DEL</li>
+	<li class="pointpolicy">Do not require CTRL+ALT+DEL</li>
 	<p><b>Recommended: Disabled</b><br>
 	</p>
 

@@ -15,31 +15,43 @@
 <div id="mainText">
 
 <h1> Useful Powershell Commands </h1>
-<p> Powershell has the potential to be a very powerful tool in the arsenal of a skilled CyberTitan.
-With practice, it can streamline processes that usually require navigating convoluted menus and make them as easy as typing a few commands.
+<p> Powershell has the potential to be a very powerful tool in the arsenal of a
+skilled CyberTitan.
+With practice, it can streamline processes that usually require navigating
+convoluted menus and make them as easy as typing a few commands.
 </p>
 
 <h2 id="search"> Searching for a File </h2>
 
-<p> Using powershell, we can search for files a lot more quickly and smoothly than by using Explorer. This is often useful for forensics questions, and allows you to do other work while it searches.
+<p> Using powershell, we can search for files a lot more quickly and smoothly
+than by using Explorer. This is often useful for forensics questions, and
+allows you to do other work while it searches.
 </p>
-<p> The following code searches for a file called "example.html" in the Users directory and all of its subdirectories.
-You can change the directory to just "C:\" in order to search the entire filesystem. You can also use wildcards in the filename. For more on wildcards, see
+<p> The following code searches for a file called "example.html" in the Users
+directory and all of its subdirectories.
+You can change the directory to just "C:\" in order to search the entire
+filesystem. You can also use wildcards in the filename. For more on wildcards, see
 <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.5">here</a>.
 </p>
 <code>Get-ChildItem -Path C:\Users -Filter example.html -Recurse -ErrorAction SilentlyContinue -Force</code>
 
 <h2 id="hash">Finding the Hash of a File</h2>
-<p>In powershell, we can easily find the hash of a file using the following command:</p>
+<p>In powershell, we can easily find the hash of a file using the following
+command:</p>
 <p><code>Get-FileHash -Algorithm <i>algorithm filepath</i></code></p>
-<p>If the hash is asked for, it will specify what algorithm to use in the question.</p>
+<p>If the hash is asked for, it will specify what algorithm to use in the
+question.</p>
 
 <h2 id="netstat">Using <code>netstat</code></h2>
-<p>If we need to list all currently listened-to ports, such as for a forensics question, we will use this command:</p>
-<p>If we redirect the output to a file, we can open it in notepad and search for specific terms.</p>
+<p>If we need to list all currently listened-to ports, such as for a forensics
+question, we will use this command:</p>
+<p>If we redirect the output to a file, we can open it in notepad and search
+for specific terms.</p>
 <p><code>netstat -abn -p <i>protocol</i></code></p>
 
-
+<h2>Clearing the DNS cache</h2>
+<p>Theoretically good practice, but not needed so far in competition</p>
+<p><code>ipconfig /flushdns</code></p>
 
 </div>
 <script>checkTheme();</script>

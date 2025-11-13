@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Remote Desktop Protocol</title>
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Remote Desktop Protocol</h1>
+<h2>If Required</h2>
+<p>In Control Panel, search it up and then enable it</p>
+<p>Require computers to use Network Level Authentication to connect</p>
+<p>In gpedit:</p>
+<p>Navigate to Local Computer Policy → Computer Configuration
+→ Administrative Templates → Windows Components → Remote Desktop Services
+→ Remote Desktop Session Host → Security
+→ Require use of specific security layer for remote (RDP) connections
+</p>
+<p>Enable and set security layer to SSL</p>
+
+<h2>If Not Required</h2>
+<p>Open services</p>
+<p>Set the following to disabled:</p>
+<ul>
+  <li>Remote Access Connection Manager</li>
+  <li>Remote Desktop Configuration</li>
+  <li>Remote Desktop Services</li>
+</ul>
+
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

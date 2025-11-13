@@ -99,3 +99,9 @@ a:hover {
 	font-style: italic;
 	margin-top: -15px;
 }
+
+.pointpolicy {
+	border-left: 5px solid #008000;
+	padding-left: 5px;
+	background: rgba(0, 128, 0, 0.2);
+}
