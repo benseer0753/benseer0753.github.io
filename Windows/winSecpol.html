@@ -25,6 +25,10 @@ Improperly configured security policies pose a risk to the security of the syste
 <p>To opening the Local Security Policy editor, type "secpol.msc" into the Run dialogue opened with WIN+r.</p>
 <p>You can also edit them in the Local Group Policy Editor (gpedit.msc), in the "Windows Settings" branch, under "Security Settings".</p>
 
+<p class="pointpolicy"><i>Policies in green (like this) are ones that have been
+scored vulnerabilities in the past. If you're in a rush, focus on these first.
+</i></p>
+
 <h2>Account Policies</h2>
 <p> The policies in the Account Policies branch of secpol relate to password requirements and locking accounts after failed sign-ins.</p>
 <h3>Password Policies</h3>
@@ -251,6 +255,7 @@ of users or groups, separated by a comma and a space.</p>
 </ul>
 
 <h3>Security Options</h3>
+<p class="todo">TODO: sort these properly into their categories.</p>
 <ul>
 	<li class="pointpolicy">Prevent users from installing printer drivers</li>
 	<p><b>Recommended: Enabled</b><br>
@@ -272,8 +277,14 @@ of users or groups, separated by a comma and a space.</p>
 	<p><b>Recommended: Disabled</b><br>
 	</p>
 </ul>
+<h4>Accounts</h4>
+<ul>
+	<li class="pointpolicy">Limit local account use of blank passwords to console logon only</li>
+	<p><b>Recommended: Enabled</b><br>
+	</p>
+</ul>
 
-<h2>Interactive Logon</h2>
+<h4>Interactive Logon</h4>
 <ul>
 	<li class="pointpolicy">Do not require CTRL+ALT+DEL</li>
 	<p><b>Recommended: Disabled</b><br>
