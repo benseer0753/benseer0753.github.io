@@ -25,31 +25,9 @@ function setLightMode() {
 }
 
 function darkMode() {
-	document.body.style.backgroundColor = "#111";
-	document.body.style.color = "Beige";
-	document.getElementById("mainText").style.borderLeftColor = "dimGrey";
-	const codes = document.getElementsByTagName("code");
-	//console.log(codes.length);
-	for (let i = 0; i < codes.length; ++i) {
-		codes[i].style.borderColor = "Beige";
-	}
-	const bigCodes = document.getElementsByClassName("bigCode");
-	for (let i = 0; i < bigCodes.length; ++i) {
-		bigCodes[i].style.borderColor = "Beige";
-	}
+	document.getElementById("stylesheet").href = "../dark.css"
 }
 
 function lightMode() {
-	document.body.style.backgroundColor = "Beige";
-	document.body.style.color = "black";
-	document.getElementById("mainText").style.borderLeftColor = "Grey";
-	const codes = document.getElementsByTagName("code");
-	//console.log(codes.length);
-	for (let i = 0; i < codes.length; ++i) {
-		codes[i].style.borderColor = "black";
-	}
-	const bigCodes = document.getElementsByClassName("bigCode");
-	for (let i = 0; i < bigCodes.length; ++i) {
-		bigCodes[i].style.borderColor = "black";
-	}
+	document.getElementById("stylesheet").href = "../light.css"
 }
