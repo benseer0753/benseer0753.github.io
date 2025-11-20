@@ -17,6 +17,41 @@
 
 <p>https://learn.microsoft.com/en-us/windows-server/storage/file-server/smb-security-hardening</p>
 
+<h2>What is SMB?</h2>
+<p>The Server Message Block protocol, often called SMB, is a protocol used to
+share files, share printers, and communicate between processes. It is currently
+developed by Microsoft, though Samba allows Linux computers to use it as well.
+</p>
+
+<h2>Disabling SMBv1</h2>
+
+<p>Using SMB1, the earliest version of SMB, is very risky. It is best to disable
+it and only use SMB2 or SMB3.</p>
+
+<p>In order to do so, you can use the following powershell command:</p>
+<p><code>Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
+</code></p>
+
+<p class="notice">Take note that this will restart the computer, so make sure
+you're not in the middle of anything else!
+</p>
+
+<h2>Managing Shares</h2>
+<p>You can manage which shares are available on the network using Computer
+Management (compmgmt.msc) or the File Share Manager (fsmgmt.msc). Both show the
+same menu; the only difference is that Computer Management also shows user and
+group management options.
+</p>
+
+<p>The shares "ADMIN$", "C$", and "IPC$" are enabled by default, and should not
+be removed. I'm fairly certain they show back up when you restart the computer
+anyways.
+</p>
+
+<p>Any shares with a '$' at the end are hidden from the default file explorer
+view, and can only be managed through the MMC plugins mentioned earlier.
+</p>
+
 </div>
 <script>checkTheme();</script>
 </body>

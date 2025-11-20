@@ -20,3 +20,7 @@ Password Policies       -o--- plan
 PAM                     --o-- ugly and incomplete. Making it a bit easier to understand would be good.
 SSH                     --o-- ugly, but almost complete. needs a link to useful scripts and more info on permissions.
 permissions & chmod     o---- idea
+Vim                     o---- would be good, to get people familiar with it
+
+ ==  MISC.  ==
+Wireshark               o---- would be good, shows up for forensics Qs
