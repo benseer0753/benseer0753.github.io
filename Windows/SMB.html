@@ -52,6 +52,59 @@ anyways.
 view, and can only be managed through the MMC plugins mentioned earlier.
 </p>
 
+<h2>SMB Signing</h2>
+<p>Enabling SMB signing is very important for security. If somebody tampers
+with an SMB message while it is in transit, the signing can help your computer
+notice that something is wrong. This prevents vulnerability to
+"Man-in-the-Middle" attacks.
+</p>
+<p>In gpedit.msc, go to: Computer Configuration\Windows Settings\Security Settings\Local Policies\Security Options
+and set "Microsoft network client: Digitally sign communications (always)" to
+enabled. Or, in powershell, run:
+</p>
+
+<p><code>Set-SmbClientConfiguration -RequireSecuritySignature $true</code></p>
+
+<h2>Authentication Rate Limiter</h2>
+<p>The authentication rate limiter in SMB does exactly as it says on the tin.
+It limits how often authentication attempts can be made. This will greatly slow
+down any brute-force attacks attempted on your system. The timeout should be set
+short enough that is does not affect regular use.
+</p>
+
+<h3>PowerShell</h3>
+<p>You can use the following command to set the timeout length in PowerShell:
+</p>
+
+<p><code>Set-SmbServerConfiguration -InvalidAuthenticationDelayTimeInMs 2000
+</code></p>
+
+<p>That example sets it to 2000 milliseconds (2 seconds), but it can be set to
+any multiple of 100 within 0 and 10'000.
+</p>
+
+<h3>Group Policy Editor</h3>
+<p>It can also be set using the Group Policy Editor at this location:</p>
+<p>Computer Configuration\Administrative Templates\Network\Lanman Server</p>
+<p>Set "Enable authentication rate limiter" to Enabled.</p>
+<p class="notice">Note that you cannot set the delay time using the Group Policy
+Editor. It can only be changed in PowerShell.</p>
+
+<h3>Encryption</h3>
+<p>Encrytpting SMB messages is important for preventing third parties from
+snooping on what files are being accessed and the contents of those files.
+</p>
+<p>Use the following command to enable encryption on compatible SMB servers:</p>
+<p><code>Set-SmbServerConfiguration –EncryptData $true</code></p>
+
+<div id="resources">
+<h2>Resources</h2>
+<a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/smb-security-hardening">
+SMB security hardening in Windows Server and Windows Client | Microsoft Learn
+</a>
+
+
+</div>
 </div>
 <script>checkTheme();</script>
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Samba</title>
+	<link href="../light.css" id="stylesheet" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Samba</h1>
+<p class="subtitle">For Linux</p>
+
+<p>Samba is Linux's method of interacting with Windows SMB file shares. It has
+a simple package name, <code>samba</code>, and its configuration file is located
+at <code>/etc/samba/smb.conf</code>.
+</p>
+
+<p>The configuration file is broken up into several sections, each surrounded by
+square brackets. Each section controls a different shared resource on the samba
+server, except for [global]; configuration there applies to the server as a
+whole or serves as defaults for other sections.
+</p>
+
+<h2>[global]</h2>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Cron</title>
+	<link href="../light.css" id="stylesheet" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>Cron</h1>
+<p class="subtitle">For Linux</p>
+
+<p>Cron is used to schedule tasks in Linux</p>
+
+<h2><code>crontab</code></h2>
+<p><code>crontab</code> is a utility used to check the processes scheduled for
+different users. for example:</p>
+<p><code>sudo crontab -u root</code></p>
+<p>This checks the scheduled tasks for the root user on the computer. It is
+important to check here for any persistence mechanisms. Malware likes to put
+itself in crontab files so it can show back up after being closed.
+</p>
+
+<p><code>/etc/crontab</code> is the global crontab. Also check it for malware.
+</p>
+
+<p><code>/etc/anacrontab</code> complements the functionality of
+<code>/etc/crontab</code> on some systems. It works essentially the same, but
+does not assume that the computer will be always on. Also check there for
+malware, same as normal cron.
+</p>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>
