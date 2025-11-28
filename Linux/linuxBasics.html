@@ -9,9 +9,21 @@
 	<script src="../themes.js"></script>
 </head>
 <body>
+
+<div class="container">
+
+<div id="header">
+<a href="/index.html">
+<marquee>Return to Index</marquee>
+</a>
+</div>
+
+<div id="menu">
 <button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
 <button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
-<div id="mainText">
+</div>
+
+<div id="main">
 
 <h1>Linux Basic Checklist</h1>
 
@@ -28,7 +40,17 @@
 <h2>PAM</h2>
 <p>For more detail, see <a href="pam.html">PAM management</a></p>
 
-<h2>
+</div> <!-- #main -->
+
+<div id="right"></div>
+
+<div id="footer">
+<a href="/index.html">
+<marquee>Return to Index</marquee>
+</a>
+</div>
+
+</div> <!-- .container -->
 
 </div>
 <script>checkTheme();</script>

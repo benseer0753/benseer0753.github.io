@@ -5,13 +5,26 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 	<title>Cron</title>
-	<link href="../light.css" id="stylesheet" rel="stylesheet" type="text/css" media="all">
-	<script src="../themes.js"></script>
+	<link href="/grid.css" id="layout" rel="stylesheet" type="text/css" media="all">
+	<link href="/light.css" id="theme" rel="stylesheet" type="text/css" media="all">
+	<script src="/themes.js"></script>
 </head>
 <body>
+
+<div class="container">
+
+<div id="header">
+<a href="/index.html">
+<marquee>Return to Index</marquee>
+</a>
+</div>
+
+<div id="menu">
 <button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
 <button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
-<div id="mainText">
+</div>
+
+<div id="main">
 
 <h1>Cron</h1>
 <p class="subtitle">For Linux</p>
@@ -36,7 +49,18 @@ does not assume that the computer will be always on. Also check there for
 malware, same as normal cron.
 </p>
 
+</div> <!-- #main -->
+
+<div id="right"></div>
+
+<div id="footer">
+<a href="/index.html">
+<marquee>Return to Index</marquee>
+</a>
 </div>
+
+</div> <!-- .container -->
+
 <script>checkTheme();</script>
 </body>
 </html>

@@ -25,9 +25,9 @@ function setLightMode() {
 }
 
 function darkMode() {
-	document.getElementById("theme").href = "../dark.css"
+	document.getElementById("theme").href = "/dark.css"
 }
 
 function lightMode() {
-	document.getElementById("theme").href = "../light.css"
+	document.getElementById("theme").href = "/light.css"
 }
