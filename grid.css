@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main right'
+    'menu footer footer footer footer footer';
+  background-color: dodgerBlue;
+}
+
+.container div {
+  padding 10px;
+  text-align: left;
+  border: 2px outset grey;
+  background-color: beige;
+}
+
+#header { grid-area: header; }
+#menu { grid-area: menu; }
+#main { grid-area: main; }
+#right { grid-area: right; }
+#footer { grid-area: footer; }

@@ -5,15 +5,27 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
 	<title>Index</title>
-	<link href="light.css" id="stylesheet" rel="stylesheet" type="text/css" media="all">
-	<script src="themes.js"></script>
+	<link href="grid.css" id="layout" rel="stylesheet" type="text/css" media="all">
+	<link href="light.css" id="theme" rel="stylesheet" type="text/css" media="all">
+	<!--<script src="themes.js"></script>-->
+	<!-- ^ needs a special case bcus index is on same level as stylesheets
+	-->
 </head>
 <body>
 
+
+<div class="container">
+
+<div id="header">
+<marquee>howdy</marquee>
+</div>
+
+<div id="menu">
 <button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
 <button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+</div> <!-- #menu -->
 
-<div id="mainText">
+<div id="main">
 
 <h1>Index</h1>
 
@@ -51,7 +63,14 @@
 <h2>Packet Tracer</h2>
 <p><a href="PT/intro.html">Introduction</a></p>
 
+</div> <!-- #main -->
+<div id="right"> right </div>
+<div id="footer">
+<marquee>toodles</marquee>
 </div>
-<script>checkTheme();</script>
+
+</div> <!-- .container -->
+
+<script>checkTheme();</script> <!-- these should all be changed to onloads -->
 </body>
 </html>
