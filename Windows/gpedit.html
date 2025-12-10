@@ -20,20 +20,60 @@
 <p>The Group Policy Editor (gpedit.msc) is where most of the actual
 configuration happens on windows computers. In here, you can manage near-on
 every aspect of the computer. From auditing to Windows Update, there's an
-endless array of options to edit. Best part, they're all somewhat organized in a
+endless array of options to edit. Best part, they're all organized in a
 handy directory tree, just like files.
 </p>
 
-<p>The automatic system update is in here</p>
+<p class="todo">The automatic system update is in here somewhere. Add it soon.
+</p>
 
-<h3>Section</h3>
+<h2>Computer Configuration</h2>
 
-<h2>subsection</h2>
+<h3>Administrative Templates</h3>
+
+<h4>Control Panel</h4>
+
 <ul>
-	<li>Policy Name</li>
-	<p><b>Recommended: Setting</b><br>
+	<li>Personalization/Enable screen saver</li>
+	<p><b>Recommended: Enabled</b><br>
 	</p>
 </ul>
+
+<h4>Network</h4>
+
+<ul>
+	<li>Network Connections/Windows Firewall<li>
+	<p><b>Recommended: For all profiles, set "Windows Firewall: Protect all
+	network connections" to Enabled</b><br>
+	</p>
+</ul>
+
+<h4>Windows Components</h4>
+
+<ul>
+	<li>Autoplay Policies/Turn off Autoplay</li>
+	<p><b>Recommended: Enabled for all drives</b><br>
+	This is the rationale blurb.</p>
+
+	<li>Remote Desktop Services/Remote Desktop Session Host/Connections/Allow user to connect remotely using Remote Desktop Services</li>
+	<p><b>Recommended: Disabled</b><br>
+	You should not allow remote access to your computer. It is a security
+	risk.</p>
+
+	<li>Remote Desktop Services/Remote Desktop Session Host/Security/Require secure RPC communication</li>
+	<p><b>Recommended: Enabled</b><br>
+	Only if RDP is enabled.</p>
+
+	<li>Remote Desktop Services/Remote Desktop Session Host/Security/Require user authentication for remote connections by using Network Level Authentication</li>
+	<p><b>Recommended: Enabled</b><br>
+	Only if RDP is enabled.</p>
+
+	<li>Search/Allow Cortana</li>
+	<p><b>Recommended: Disabled</b><br>
+	Annoying, unecessary, and probably insecure somehow.</p>
+</ul>
+
+
 
 </div>
 <script>checkTheme();</script>
