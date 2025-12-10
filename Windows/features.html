@@ -4,7 +4,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
-	<title>Windows - Basic Checklist</title>
+	<title>Windows - Roles and Features</title>
 	<link href="../light.css" id="stylesheet" rel="stylesheet" type="text/css" media="all">
 	<script src="../themes.js"></script>
 </head>
@@ -13,15 +13,53 @@
 <button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
 <div id="mainText">
 
-<h1>Services</h1>
+<h1>Roles and Features</h1>
 
-<p>Some Windows features are enabled by default, when they are either insecure
-or unnecessary.</p>
+<h2>What are Roles and Features?</h2>
+<p>Roles define what type of server Windows computers are. This includes things
+like HTML webservers, file share servers, or domain controllers managing other
+computers on the network.
+</p>
+
+<p>Features are generally a bit smaller than roles. They work as little bonus
+pieces of functionality for the computer. For example, BitLocker drive
+encryption is a feature. It works in addition to any other roles and features
+the computer has and doesn't completely change its function.
+</p>
+
+<p>Sometimes there will be roles and features installed on a computer that do
+not need to be installed. These can present a security risk. The more
+unnecessary features on a computer, the more likely it is that at least one will
+have a security vulnerability.
+</p>
+
+<p>Besides being a security risk, extra roles and features running in the
+background can slow down the computer. In a competition, this is annoying; in a
+real work environment, this could lead to loss of productivity or past work.
+</p>
+
+<h2>Adding / Removing Roles and Features</h2>
+
+<p>Adding and removing roles and features is slightly different between Server
+and workstation Windows. On regular windows, you want to open "appwiz.cpl" in
+the run dialogue or find it in control panel.
+</p>
+
+<p>On Windows Server, they can be managed in the Server Manager window. Click on
+the "Manage" tab in the top-right, then on "Add/Remove Roles and Features". From
+there, follow the prompts on-screen.
+</p>
+
+<h3>Roles to disable</h3>
+<p>All of them. Unless <i>explicitly</i> stated in the README, it shouldn't be
+there. Things like Telnet or FTP are common to see, and should always be
+removed (unless specified) due to security flaws.
+</p>
+
+<h3>Features to Disable</h3>
 
 <p class="notice">Remember: the README takes priority over all instructions
 here. If the README says to keep it, you keep it.</p>
-
-<h2>Features to Disable</h2>
 
 <ul>
 	<li>Active Directory Services</li>
