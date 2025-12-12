@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+	<title>Linux - passwd and shadow</title>
+	<link href="../light.css" id="stylesheet" rel="stylesheet" type="text/css" media="all">
+	<script src="../themes.js"></script>
+</head>
+<body>
+<button id="darkButton" type="button" onclick="setDarkMode()">Dark Mode</button>
+<button id="lightButton" type="button" onclick="setLightMode()">Light Mode</button>
+<div id="mainText">
+
+<h1>passwd and shadow</h1>
+
+<p>The file "/etc/passwd" is home to various information about users on the
+system. Ranging from their username to their home directory. Also included is
+either their encrypted password or a marker signaling that it is stored in
+"/etc/shadow".
+</p>
+
+<h2>Storing Passwords in shadow</h2>
+
+<p class="subtitle">CIS 7.1.2</p>
+
+<p>It is important to store user's encrypted passwords outside of the passwd
+file because the passwd file needs to stay globally-readable. If it wasn't, a
+great many programs would not work.
+</p>
+
+<p>Revealing a user's password, even encrypted, can be a security risk. It is
+good practice to ensure that an attacker knows as little about confidential
+information as possible. For example, if the password hash was revealed to them,
+they could user other computers to try to crack the password instead of being
+forced to do it only on one.
+</p>
+
+<h3>Auditing</h3>
+
+<p>Using the following command:</p>
+
+<p><code>awk -F: '($2 != "x" ) { print "User: \"" $1 "\" is not set to shadowed passwords "}' /etc/passwd</code></p>
+
+<p>will return a list of users whose passwords are stored in passwd instead of
+shadow.
+
+<h3>Remediation</h3>
+
+<p>To remedy this, use the <code>pwconv</code> utility. This will
+automatically do all the annoying copy-and-pasting for you.
+</p>
+
+<h2>Ensuring Passwords are not Empty</h2>
+<p class="subtitle">CIS 7.2.2</p>
+
+<p>If the password field for an account is empty, that account can be logged
+into without a password. This leaves them open to use by unauthorized persons.
+</p>
+
+<h3>Auditing</h3>
+
+<p>Using the following command:</p>
+
+<p><code>awk -F: '($2 == "" ) { print $1 " does not have a password "}' /etc/shadow</code></p>
+
+<p>Will print out a list of all users with empty passwords.
+</p>
+
+<h3>Remediation</h3>
+
+<p>Using the <code>password -l <i>username</i></code> will lock the account
+until you determine whether to delete it using <code>deluser</code> or give it
+a new password using <code>passwd <i>username password</i></code>
+</p>
+
+<h2>Ensure no Duplicate UIDs Exist</h2>
+<p class="subtitle">CIS 7.2.5</p>
+
+<p>Basically, things break if you have duplicate UIDs. Ensure none exist to keep
+permissions working as intended and to keep logging accurate.
+</p>
+
+<h3>Auditing</h3>
+
+<p>Run <a href="duplicate_UID_check.txt">this script</a> in bash by downloading
+or copying it and running this command in the directory containing it:
+</p>
+
+<p><code>bash duplicate_UID_check.txt</code></p>
+
+<p>This will tell you which users share a UID, if any.
+</p>
+
+<h3>Remediation</h3>
+
+<p>Edit the passwd file and review ownership of any files owned by that UID.
+</p>
+
+<h2>Ensure Proper File Permissions for passwd Files</h2>
+
+<p>passwd, passwd-, group, and group- should all be 640 or more restrictive.
+Uid and Gid should both be root.
+</p>
+
+<p>shadow and shadow- should both be 640 or more restrictive, and should be
+owned by Uid and Gid root.
+</p>
+
+</div>
+<script>checkTheme();</script>
+</body>
+</html>
